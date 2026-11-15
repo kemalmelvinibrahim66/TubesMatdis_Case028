@@ -99,6 +99,16 @@ python -m scripts.run_simulation --all --algorithm pathfinding
 > `AlgorithmRegistry.register("nama_algoritma", KelasAlgoritma)` di akhir modulnya.
 > Panduan lengkap: lihat [TUTORIAL.md](TUTORIAL.md).
 
+### Visualizer Web Case 28
+
+Visualizer menampilkan graf siskamling 26 node dalam kondisi siang dan malam. Jalankan server lokal dari folder `matdis-tubes-2026`:
+
+```bash
+python -m http.server 8000
+```
+
+Buka `http://localhost:8000/visualizer/`. Gunakan tombol kondisi untuk membandingkan MST siang (5.175 m) dan malam (5.440 m), slider replay untuk mengikuti event gate dan repair satu per satu, atau tombol snapshot untuk melihat dampak dua gate ditutup bersamaan (3 komponen). Klik node untuk melihat detail lokasi. Panel perbandingan menampilkan jumlah langkah trace Dynamic Subtree Repair dan Kruskal ulang; angka tersebut bukan runtime. Data berada di `visualizer/samples/sample_case28_siskamling_portal.json`.
+
 ### 2. Analisis Performa & Trade-off (`scripts/`)
 
 Untuk mengukur waktu eksekusi dalam milidetik (ms) dan total *step count* dari algoritma:

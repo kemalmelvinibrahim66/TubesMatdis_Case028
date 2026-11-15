@@ -1,0 +1,154 @@
+{
+  "title": "Jaringan Komunikasi Patroli Zona Inti KBP",
+  "description": "Case 28: penutupan dua gate siskamling pada malam hari.",
+  "gateWeights": [115, 240],
+  "nodes": [
+    { "id": 0, "label": "Pos Komando Utara (Gerbang Jl. Gelap Nyawang)", "pos": [565, 564] },
+    { "id": 1, "label": "Simpang Koridor Utara Tengah", "pos": [365, 559] },
+    { "id": 2, "label": "Simpang Utara Barat (Bumi Hejo)", "pos": [274, 561] },
+    { "id": 3, "label": "Jl. Guru Gantangan Utara", "pos": [274, 431] },
+    { "id": 4, "label": "Pos Gate 1 Utara (Kancahnangkub Utara)", "pos": [381, 400] },
+    { "id": 5, "label": "Simpang Guru Gantangan - Kancahnangkub", "pos": [243, 355] },
+    { "id": 6, "label": "Pos Gate 1 Selatan (Kancahnangkub Kidul)", "pos": [395, 352] },
+    { "id": 7, "label": "Simpang Kancahnangkub Timur", "pos": [455, 357] },
+    { "id": 8, "label": "Pos Gate 2 Utara (Gelap Nyawang / Pancasona)", "pos": [650, 355] },
+    { "id": 9, "label": "Simpang Gumnut Cafe & Bakery", "pos": [467, 317] },
+    { "id": 10, "label": "Simpang Boulevard - Gelap Nyawang", "pos": [556, 312] },
+    { "id": 11, "label": "Jl. Banyakcipta Kidul Utara", "pos": [525, 281] },
+    { "id": 12, "label": "Boulevard Tengah (Depan Momiji Cafe)", "pos": [562, 208] },
+    { "id": 13, "label": "Jl. Banyakcipta Kidul Selatan", "pos": [527, 129] },
+    { "id": 14, "label": "Banyakcipta Barat Daya (Cul-de-sac)", "pos": [424, 125] },
+    { "id": 15, "label": "Simpang Boulevard - Jl. Bandung Tempo Dulu", "pos": [566, 108] },
+    { "id": 16, "label": "Pos Gate 2 Selatan (Barat Laut Tatar Jingga)", "pos": [602, 277] },
+    { "id": 17, "label": "Jl. Jinggasastra Utara", "pos": [657, 281] },
+    { "id": 18, "label": "Jl. Jingga Hegar Utara", "pos": [754, 277] },
+    { "id": 19, "label": "Jl. Jingga Prabu Utara", "pos": [807, 280] },
+    { "id": 20, "label": "Ujung Timur Tatar Jingga Utara", "pos": [842, 282] },
+    { "id": 21, "label": "Barat Jl. Jinggasastra Selatan", "pos": [602, 144] },
+    { "id": 22, "label": "Jl. Jinggasastra Selatan", "pos": [656, 147] },
+    { "id": 23, "label": "Jl. Jingga Hegar Selatan", "pos": [751, 144] },
+    { "id": 24, "label": "Jl. Jingga Prabu Selatan", "pos": [807, 145] },
+    { "id": 25, "label": "Ujung Timur Jl. Bandung Tempo Dulu", "pos": [838, 114] }
+  ],
+  "edges": [
+    { "from": 0, "to": 1, "weight": 465 },
+    { "from": 1, "to": 2, "weight": 210 },
+    { "from": 0, "to": 8, "weight": 555 },
+    { "from": 1, "to": 7, "weight": 530 },
+    { "from": 2, "to": 3, "weight": 305 },
+    { "from": 3, "to": 5, "weight": 200 },
+    { "from": 3, "to": 4, "weight": 260 },
+    { "from": 4, "to": 6, "weight": 115 },
+    { "from": 5, "to": 6, "weight": 355 },
+    { "from": 7, "to": 6, "weight": 140 },
+    { "from": 7, "to": 9, "weight": 95 },
+    { "from": 8, "to": 10, "weight": 265 },
+    { "from": 8, "to": 16, "weight": 240 },
+    { "from": 9, "to": 10, "weight": 210 },
+    { "from": 10, "to": 12, "weight": 245 },
+    { "from": 12, "to": 15, "weight": 235 },
+    { "from": 9, "to": 11, "weight": 210 },
+    { "from": 10, "to": 11, "weight": 145 },
+    { "from": 11, "to": 13, "weight": 355 },
+    { "from": 12, "to": 13, "weight": 265 },
+    { "from": 9, "to": 14, "weight": 505 },
+    { "from": 10, "to": 16, "weight": 190 },
+    { "from": 16, "to": 17, "weight": 130 },
+    { "from": 17, "to": 18, "weight": 225 },
+    { "from": 18, "to": 19, "weight": 125 },
+    { "from": 19, "to": 20, "weight": 80 },
+    { "from": 16, "to": 21, "weight": 310 },
+    { "from": 17, "to": 22, "weight": 310 },
+    { "from": 18, "to": 23, "weight": 310 },
+    { "from": 19, "to": 24, "weight": 315 },
+    { "from": 20, "to": 25, "weight": 390 },
+    { "from": 15, "to": 21, "weight": 170 },
+    { "from": 21, "to": 22, "weight": 125 },
+    { "from": 22, "to": 23, "weight": 220 },
+    { "from": 23, "to": 24, "weight": 130 },
+    { "from": 24, "to": 25, "weight": 145 }
+  ],
+  "gates": ["4-6", "8-16"],
+  "mst": {
+    "day": [
+      "19-20", "7-9", "4-6", "18-19", "21-22", "16-17", "23-24", "6-7",
+      "10-11", "24-25", "15-21", "10-16", "3-5", "1-2", "9-10", "22-23",
+      "17-18", "12-15", "8-16", "10-12", "3-4", "12-13", "2-3", "0-1", "9-14"
+    ],
+    "nightRemoved": ["4-6", "8-16"],
+    "nightAdded": ["5-6", "8-10"],
+    "dayCost": 5175,
+    "nightCost": 5440
+  },
+  "replay": [
+    {
+      "title": "MST awal - siang",
+      "description": "Kruskal memilih 25 sisi untuk menghubungkan seluruh node dengan total bobot minimum.",
+      "removed": [],
+      "added": [],
+      "forestCost": 5175,
+      "edgeCount": 25,
+      "components": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]]
+    },
+    {
+      "title": "Gate 1 ditutup - N04-N06",
+      "description": "Sisi MST N04-N06 (115 m) dihapus. Hutan MST menjadi dua komponen berukuran 6 dan 20 node.",
+      "removed": ["4-6"],
+      "added": [],
+      "forestCost": 5060,
+      "edgeCount": 24,
+      "components": [
+        [0, 1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+      ]
+    },
+    {
+      "title": "Repair 1 - N05-N06",
+      "description": "Sisi alternatif N05-N06 (355 m) menyambungkan kembali 26 node. Bobot menjadi 5.415 m, naik 240 m dari MST awal.",
+      "removed": ["4-6"],
+      "added": ["5-6"],
+      "forestCost": 5415,
+      "edgeCount": 25,
+      "components": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]]
+    },
+    {
+      "title": "Gate 2 ditutup - N08-N16",
+      "description": "Sisi MST N08-N16 (240 m) dihapus. Node N08 terpisah dari komponen 25 node.",
+      "removed": ["4-6", "8-16"],
+      "added": ["5-6"],
+      "forestCost": 5175,
+      "edgeCount": 24,
+      "components": [
+        [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+        [8]
+      ]
+    },
+    {
+      "title": "Repair 2 - N08-N10",
+      "description": "Sisi alternatif N08-N10 (265 m) menghubungkan kembali node N08. MST malam tersambung dengan total bobot 5.440 m (+265 m).",
+      "removed": ["4-6", "8-16"],
+      "added": ["5-6", "8-10"],
+      "forestCost": 5440,
+      "edgeCount": 25,
+      "components": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]]
+    }
+  ],
+  "impactSnapshot": {
+    "title": "Dampak jika dua gate ditutup bersamaan",
+    "description": "Dari MST siang, menghapus kedua gate sekaligus menghasilkan tiga komponen (6 + 19 + 1 node). Ini snapshot dampak sebelum algoritma melakukan repair.",
+    "removed": ["4-6", "8-16"],
+    "added": [],
+    "forestCost": 4820,
+    "edgeCount": 23,
+    "components": [
+      [0, 1, 2, 3, 4, 5],
+      [6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+      [8]
+    ]
+  },
+  "algorithmComparison": {
+    "subtreeRepairSteps": 33,
+    "staticKruskalSteps": 83,
+    "finalCost": 5440
+  }
+}

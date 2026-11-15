@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Visualizer MST - Case 28 KBP</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=5">
+    <script src="assets/js/replayer-engine.js?v=5" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">MATEMATIKA DISKRIT - MINIMUM SPANNING TREE</p>
+          <h1>Jaringan Siskamling Kota Baru Parahyangan</h1>
+          <p class="subtitle">Visualisasi 26 node dan 36 ruas jalan pada kondisi gate siang dan malam.</p>
+        </div>
+        <span class="case-badge">CASE 28</span>
+      </header>
+
+      <section class="toolbar" aria-label="Pengaturan visualisasi">
+        <div class="mode-switch" role="group" aria-label="Pilih kondisi graf">
+          <button class="mode-button is-active" type="button" data-mode="day" aria-pressed="true">Siang - gate buka</button>
+          <button class="mode-button" type="button" data-mode="night" aria-pressed="false">Malam - gate tutup</button>
+        </div>
+        <label class="weight-toggle">
+          <input id="show-all-weights" type="checkbox" checked>
+          <span>Tampilkan bobot semua ruas</span>
+        </label>
+      </section>
+
+      <section class="timeline-card" aria-label="Replay dampak dan perbaikan MST">
+        <div class="timeline-header">
+          <div>
+            <p class="eyebrow">WHITE-BOX TRACE</p>
+            <h2 id="timeline-title">Proses penutupan gate dan repair MST</h2>
+          </div>
+          <span class="timeline-count" id="timeline-count">Langkah 1 dari 5</span>
+        </div>
+        <div class="timeline-controls">
+          <button class="timeline-button" id="previous-step" type="button" aria-label="Langkah sebelumnya">Sebelumnya</button>
+          <input id="timeline-slider" type="range" min="0" max="4" value="0" step="1" aria-label="Pilih langkah proses MST">
+          <button class="timeline-button" id="next-step" type="button" aria-label="Langkah berikutnya">Selanjutnya</button>
+        </div>
+        <div class="timeline-copy">
+          <strong id="step-label">MST awal - siang</strong>
+          <p id="step-description">Kruskal memilih 25 sisi untuk menghubungkan seluruh node dengan total bobot minimum.</p>
+        </div>
+        <div class="impact-action">
+          <span>Analisis tambahan dari MST siang:</span>
+          <button class="timeline-button" id="impact-view" type="button" aria-pressed="false">Lihat dampak dua gate ditutup bersamaan</button>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Ringkasan graf">
+        <article class="summary-card">
+          <span class="summary-label">Simpul</span>
+          <strong id="node-count">-</strong>
+          <span class="summary-note">N00 sampai N25</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Ruas jalan</span>
+          <strong id="edge-count">-</strong>
+          <span class="summary-note">Sisi pada graf awal</span>
+        </article>
+        <article class="summary-card summary-card-accent">
+          <span class="summary-label">Bobot forest / MST aktif</span>
+          <strong id="mst-cost">-</strong>
+          <span class="summary-note" id="mst-detail">-</span>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">Perubahan malam</span>
+          <strong id="night-delta">-</strong>
+          <span class="summary-note">Dari MST kondisi siang</span>
+        </article>
+      </section>
+
+      <section class="visual-layout">
+        <div class="map-card">
+          <div class="map-heading">
+            <div>
+              <h2 id="map-title">Kondisi siang</h2>
+              <p id="map-description">Gate 1 dan Gate 2 terbuka, keduanya termasuk sisi MST.</p>
+            </div>
+            <span class="status-pill" id="status-pill">GATE BUKA</span>
+          </div>
+          <div class="graph-viewport">
+            <svg id="graph" viewBox="0 0 900 660" role="group" aria-labelledby="map-title map-description">
+              <rect class="map-background" x="0" y="0" width="900" height="660"></rect>
+              <g class="map-art" aria-hidden="true">
+                <path class="map-water" d="M0 0H82L112 78L88 158L117 239L86 321L110 418L74 505L101 660H0Z"></path>
+                <path class="map-water map-water-east" d="M842 0H900V660H864L849 565L870 481L846 390L872 299L848 203L875 105Z"></path>
+                <path class="map-park" d="M116 132L170 111L205 145L190 207L137 225L110 188Z"></path>
+                <path class="map-park" d="M112 437L169 421L191 475L160 525L108 500Z"></path>
+                <path class="map-road" d="M125 83H846M142 166H833M121 260H839M123 347H850M120 430H850M140 525H845M203 55V588M317 64V604M430 62V594M550 61V604M681 63V602M798 56V603"></path>
+                <path class="map-road map-road-diagonal" d="M215 66L273 163L220 251L300 338L244 423L290 547M388 74L430 164L377 248L466 334L414 426L470 578M616 65L572 160L651 254L590 345L672 430L624 581M755 82L715 168L785 255L730 349L793 436L742 565"></path>
+                <path class="zone-boundary" d="M140 58H849V603H140Z"></path>
+                <text class="map-caption" x="156" y="78">ZONA INTI KOTA BARU PARAHYANGAN</text>
+                <text class="map-label" x="702" y="119">KORIDOR UTARA</text>
+                <text class="map-label" x="716" y="478">TATAR JINGGA</text>
+                <text class="map-label" x="168" y="573">JARINGAN SISKAMLING</text>
+              </g>
+              <g id="edges-layer"></g>
+              <g id="labels-layer"></g>
+              <g id="nodes-layer"></g>
+            </svg>
+          </div>
+          <div class="map-footer">
+            <span><i class="legend-line legend-mst"></i>Sisi MST</span>
+            <span><i class="legend-line legend-gate"></i>Gate aktif / ditutup</span>
+            <span><i class="legend-line legend-repair"></i>Sisi perbaikan malam</span>
+            <span><i class="legend-line legend-other"></i>Sisi non-MST</span>
+          </div>
+        </div>
+
+        <aside class="details-column">
+          <section class="details-card">
+            <div class="details-heading">
+              <div>
+                <p class="eyebrow">RINGKASAN KONDISI</p>
+                <h2 id="condition-title">Siang (gate buka)</h2>
+              </div>
+              <span class="condition-dot" id="condition-dot"></span>
+            </div>
+            <div id="condition-details" class="condition-details"></div>
+            <div class="component-summary" id="component-summary" aria-live="polite"></div>
+          </section>
+
+          <section class="details-card node-card" aria-live="polite">
+            <p class="eyebrow">DETAIL SIMPUL</p>
+            <h2 id="selected-node-title">Pilih simpul</h2>
+            <p id="selected-node-label" class="selected-node-label">Klik salah satu node pada graf untuk melihat nama lokasinya.</p>
+            <div class="node-stat-row">
+              <span>Ruas terhubung</span>
+              <strong id="selected-node-degree">-</strong>
+            </div>
+            <div class="node-stat-row">
+              <span>Ruas MST</span>
+              <strong id="selected-node-mst-degree">-</strong>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="comparison-card" aria-label="Perbandingan algoritma MST">
+        <div class="comparison-heading">
+          <div>
+            <p class="eyebrow">PERBANDINGAN TRACE CASE 28</p>
+            <h2>Repair dinamis vs. hitung ulang Kruskal</h2>
+          </div>
+          <span class="comparison-result">Bobot akhir sama: 5.440 m</span>
+        </div>
+        <div class="comparison-grid">
+          <article class="comparison-method">
+            <span>Dynamic Subtree Repair</span>
+            <strong id="subtree-steps">33</strong>
+            <small>langkah trace</small>
+          </article>
+          <article class="comparison-method">
+            <span>Kruskal ulang (StaticKruskal)</span>
+            <strong id="kruskal-steps">83</strong>
+            <small>langkah trace</small>
+          </article>
+          <article class="comparison-method comparison-saved">
+            <span>Selisih jumlah langkah</span>
+            <strong id="step-savings">50 lebih sedikit</strong>
+            <small id="step-savings-note">berdasarkan total_steps pada file trace</small>
+          </article>
+        </div>
+        <p class="comparison-note">Jumlah langkah di atas berasal dari trace log, bukan pengukuran waktu eksekusi.</p>
+      </section>
+
+      <p class="page-footnote">Jarak ditampilkan dalam meter. Klik node untuk melihat detail. Posisi node mengikuti koordinat skenario Case 28.</p>
+      <p id="load-error" class="load-error" role="alert" hidden></p>
+    </main>
+  </body>
+</html>
