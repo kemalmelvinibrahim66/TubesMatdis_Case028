@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Fishbone-6M-KBP-Kasus28" id="fishbone-kbp-28">
+    <mxGraphModel dx="2000" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2100" pageHeight="1200" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_box" parent="1" value="&lt;b&gt;DIAGRAM FISHBONE 6M: LANDASAN REALISTIS PEMODELAN GRAF KASUS 28 (SISKAMLING PORTAL)&lt;/b&gt;&lt;br&gt;&lt;span style='font-size:12px; color:#475569;'&gt;Studi Kasus Zona Inti Kota Baru Parahyangan (KBP) - Pemodelan Node, Weight, dan Capacity dengan Penutupan 2 Gate Malam&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;fontColor=#0F172A;fontSize=15;align=center;" vertex="1">
+          <mxGeometry x="120" y="25" width="1350" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="main_spine" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=5;strokeColor=#1E293B;endSize=10;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="560" as_="sourcePoint" />
+            <mxPoint x="1500" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fish_head" parent="1" value="&lt;b style='font-size:14px; color:#991B1B;'&gt;MASALAH UTAMA:&lt;/b&gt;&lt;br&gt;&lt;hr style='border:0.5px solid #DC2626;'&gt;&lt;b&gt;Disrupsi Jaringan Keamanan &amp; Patroli&lt;/b&gt;&lt;br&gt;akibat penutupan &lt;b&gt;2 Gate Sekunder (Jam 23.00-05.00 WIB)&lt;/b&gt;:&lt;br&gt;• &lt;b&gt;Gate 1:&lt;/b&gt; Tembusan Tatar Jingga ↔ Pancasona&lt;br&gt;• &lt;b&gt;Gate 2:&lt;/b&gt; Tembusan Banyakcipta ↔ Larang Prabu&lt;br&gt;&lt;br&gt;&lt;span style='font-size:11px; background-color:#FEE2E2; padding:4px; border-radius:4px; color:#991B1B;'&gt;&lt;b&gt;Tuntutan MST:&lt;/b&gt; Rekonfigurasi cepat topologi jaringan minimum 2 subtree terputus (Kruskal vs Dynamic Subtree Repair)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#EF4444;strokeWidth=2;fontColor=#1E293B;fontSize=11.5;shadow=1;spacing=8;align=left;valign=middle;" vertex="1">
+          <mxGeometry x="1520" y="430" width="380" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_machine" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="165" as_="sourcePoint" />
+            <mxPoint x="440" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_machine" parent="1" value="&lt;b&gt;MACHINE&lt;br&gt;&lt;b style='font-size:10px; color:#1E40AF;'&gt;[Landasan NODE]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="100" y="120" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100.0" y="244.0" as_="sourcePoint" />
+            <mxPoint x="260.0" y="244.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_0" parent="1" value="Central Command Center KBP (Pos Utama / Node 0)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-140.0" y="230.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145.0" y="323.0" as_="sourcePoint" />
+            <mxPoint x="305.0" y="323.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_1" parent="1" value="Gate 1 &amp; Gate 2: Smart Boom Gate Sekunder (Node Event)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-95.0" y="309.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190.0" y="402.0" as_="sourcePoint" />
+            <mxPoint x="350.0" y="402.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_2" parent="1" value="Gate 3 - 6: Gerbang Utama Tatar &amp; Boulevard 24 Jam" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-50.0" y="388.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235.0" y="481.0" as_="sourcePoint" />
+            <mxPoint x="395.0" y="481.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_3" parent="1" value="CCTV PTZ &amp; Sensor Persimpangan Tatar (Titik Pantau)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-5.0" y="467.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_measurement" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="705" y="165" as_="sourcePoint" />
+            <mxPoint x="930" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_measurement" parent="1" value="&lt;b&gt;MEASUREMENT&lt;br&gt;&lt;b style='font-size:10px; color:#9A3412;'&gt;[Landasan WEIGHT]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#F97316;fontColor=#7C2D12;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="590" y="120" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590.0" y="244.0" as_="sourcePoint" />
+            <mxPoint x="750.0" y="244.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_0" parent="1" value="Jarak Fisik Nyata (Meter) Antar-Pos Jalur Jalan KBP" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="350.0" y="230.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="635.0" y="323.0" as_="sourcePoint" />
+            <mxPoint x="795.0" y="323.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_1" parent="1" value="Penalti Bobot Dinamis pada Gate 1 &amp; 2 (w -&gt; inf)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="395.0" y="309.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680.0" y="402.0" as_="sourcePoint" />
+            <mxPoint x="840.0" y="402.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_2" parent="1" value="Waktu Tempuh (Response Time) Patroli Memutar via Arteri" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="440.0" y="388.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="725.0" y="481.0" as_="sourcePoint" />
+            <mxPoint x="885.0" y="481.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_3" parent="1" value="Redaman Sinyal (Signal Attenuation) Antar-Kluster" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="485.0" y="467.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_material" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1195" y="165" as_="sourcePoint" />
+            <mxPoint x="1420" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_material" parent="1" value="&lt;b&gt;MATERIAL&lt;br&gt;&lt;b style='font-size:10px; color:#065F46;'&gt;[Landasan CAPACITY]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10B981;fontColor=#064E3B;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="1080" y="120" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1080.0" y="244.0" as_="sourcePoint" />
+            <mxPoint x="1240.0" y="244.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_0" parent="1" value="Kabel Fiber Optic Boulevard (Throughput Sangat Tinggi)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="840.0" y="230.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1125.0" y="323.0" as_="sourcePoint" />
+            <mxPoint x="1285.0" y="323.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_1" parent="1" value="Wireless Link Antar-Tatar (Throughput Terbatas)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="885.0" y="309.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170.0" y="402.0" as_="sourcePoint" />
+            <mxPoint x="1330.0" y="402.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_2" parent="1" value="Palang Boom Gate Otomatis (Daya Tampung Akses)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="930.0" y="388.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215.0" y="481.0" as_="sourcePoint" />
+            <mxPoint x="1375.0" y="481.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_3" parent="1" value="Solar Panel &amp; Baterai UPS (Stabilitas Catu Daya)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="975.0" y="467.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_methods" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="215" y="1000" as_="sourcePoint" />
+            <mxPoint x="440" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_methods" parent="1" value="&lt;b&gt;METHODS&lt;br&gt;&lt;b style='font-size:10px; color:#5B21B6;'&gt;[Landasan TOPOLOGI &amp; EVENT]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#8B5CF6;fontColor=#4C1D95;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="100" y="1000" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100.0" y="912.0" as_="sourcePoint" />
+            <mxPoint x="260.0" y="912.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_0" parent="1" value="SOP Jam Malam: Penutupan Gate 1 &amp; 2 (23.00-05.00 WIB)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-140.0" y="898.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145.0" y="824.0" as_="sourcePoint" />
+            <mxPoint x="305.0" y="824.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_1" parent="1" value="One-Gate Security System: Seluruh Akses Lewat Gerbang Depan" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-95.0" y="810.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190.0" y="736.0" as_="sourcePoint" />
+            <mxPoint x="350.0" y="736.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_2" parent="1" value="Desain Spanning Tree: Jalur Transmisi Bebas Loop" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-50.0" y="722.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235.0" y="648.0" as_="sourcePoint" />
+            <mxPoint x="395.0" y="648.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_3" parent="1" value="SOTA Dynamic Subtree Repair: Perbaikan Cepat 2 Subtree" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="-5.0" y="634.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_man" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="705" y="1000" as_="sourcePoint" />
+            <mxPoint x="930" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_man" parent="1" value="&lt;b&gt;MAN&lt;br&gt;&lt;b style='font-size:10px; color:#831843;'&gt;[Landasan RESPON &amp; PERSONEL]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#EC4899;fontColor=#701A75;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="590" y="1000" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590.0" y="912.0" as_="sourcePoint" />
+            <mxPoint x="750.0" y="912.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_0" parent="1" value="Personel Sekuriti Standby di Pos Gerbang Utama 24 Jam" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="350.0" y="898.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="635.0" y="824.0" as_="sourcePoint" />
+            <mxPoint x="795.0" y="824.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_1" parent="1" value="Unit Reaksi Cepat Patroli Sepeda Motor (Mobile Patrol)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="395.0" y="810.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680.0" y="736.0" as_="sourcePoint" />
+            <mxPoint x="840.0" y="736.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_2" parent="1" value="Beban Saluran Frekuensi Radio HT Antar-Sektor Tatar" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="440.0" y="722.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="725.0" y="648.0" as_="sourcePoint" />
+            <mxPoint x="885.0" y="648.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_3" parent="1" value="Prosedur Verifikasi Tamu &amp; ID Card Warga di Gerbang" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="485.0" y="634.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_environment" parent="1" edge="1" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1195" y="1000" as_="sourcePoint" />
+            <mxPoint x="1420" y="560" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="box_environment" parent="1" value="&lt;b&gt;ENVIRONMENT&lt;br&gt;&lt;b style='font-size:10px; color:#155E75;'&gt;[Landasan GEOMETRI &amp; KONTUR]&lt;/b&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFFAFE;strokeColor=#06B6D4;fontColor=#164E63;fontSize=12;align=center;shadow=1;" vertex="1">
+          <mxGeometry x="1080" y="1000" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_0" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1080.0" y="912.0" as_="sourcePoint" />
+            <mxPoint x="1240.0" y="912.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_0" parent="1" value="Batas Danau KBP Seru (Mencegah Tarikan Edge Sembarangan)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="840.0" y="898.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_1" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1125.0" y="824.0" as_="sourcePoint" />
+            <mxPoint x="1285.0" y="824.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_1" parent="1" value="Topografi Kontur Jalan Tatar (Elevasi Titik Sinyal)" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="885.0" y="810.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_2" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1170.0" y="736.0" as_="sourcePoint" />
+            <mxPoint x="1330.0" y="736.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_2" parent="1" value="Kluster Tatar Jingga &amp; Banyakcipta Terpisah Boulevard" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="930.0" y="722.0" width="235" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_3" parent="1" edge="1" style="endArrow=classic;html=1;strokeWidth=1.5;strokeColor=#94A3B8;endSize=4;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1215.0" y="648.0" as_="sourcePoint" />
+            <mxPoint x="1375.0" y="648.0" as_="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_3" parent="1" value="Cuaca Hujan &amp; Visibilitas Rendah Jam Malam" style="text;html=1;align=right;verticalAlign=middle;fontSize=9.5;fontColor=#334155;whiteSpace=wrap;" vertex="1">
+          <mxGeometry x="975.0" y="634.0" width="235" height="28" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
