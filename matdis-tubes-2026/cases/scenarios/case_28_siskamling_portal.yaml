@@ -1,56 +1,245 @@
 case_id: "case_28_siskamling_portal"
-title: "Jaringan Komunikasi: Penutupan Portal Siskamling (Re-Koneksi Pos Ronda)"
-description: "Skenario N=5 berbasis Minimum Spanning Tree (MST). Penutupan portal siskamling akibat isu keamanan memutus kabel komunikasi antar pos, menuntut pembentukan kembali topologi jaringan HT/sensor terpendek."
+title: "Jaringan Komunikasi Patroli Zona Inti KBP: Penutupan Portal Siskamling (26 Node)"
+description: "Skenario Zona Inti Kota Baru Parahyangan (N=26 simpul persimpangan, E=36 ruas jalan nyata) berbasis Minimum Spanning Tree (MST). Penutupan dua portal siskamling malam hari (23.00-05.00 WIB) memutus sisi MST aktif, menuntut perbaikan topologi jaringan patroli/HT terpendek."
 
 nodes:
   - id: 0
-    label: "Pos Ronda Utama / Central (Start)"
-    pos: [0.0, 0.0]
+    label: "Pos Komando Utara (Gerbang Jl. Gelap Nyawang)"
+    pos: [565.0, 564.0]
   - id: 1
-    label: "Pos Portal Sektor Utara"
-    pos: [6.0, 4.0]
+    label: "Simpang Koridor Utara Tengah"
+    pos: [365.0, 559.0]
   - id: 2
-    label: "Pos Portal Sektor Selatan"
-    pos: [6.0, -4.0]
+    label: "Simpang Utara Barat (Bumi Hejo)"
+    pos: [274.0, 561.0]
   - id: 3
-    label: "Pos Ronda Lapangan Tengah"
-    pos: [12.0, 0.0]
+    label: "Jl. Guru Gantangan Utara"
+    pos: [274.0, 431.0]
   - id: 4
-    label: "Terminal Sinyal Balai Desa (Goal)"
-    pos: [18.0, 0.0]
+    label: "Pos Gate 1 Utara (Kancahnangkub Utara)"
+    pos: [381.0, 400.0]
+  - id: 5
+    label: "Simpang Guru Gantangan - Kancahnangkub"
+    pos: [243.0, 355.0]
+  - id: 6
+    label: "Pos Gate 1 Selatan (Kancahnangkub Kidul)"
+    pos: [395.0, 352.0]
+  - id: 7
+    label: "Simpang Kancahnangkub Timur"
+    pos: [455.0, 357.0]
+  - id: 8
+    label: "Pos Gate 2 Utara (Gelap Nyawang / Pancasona)"
+    pos: [650.0, 355.0]
+  - id: 9
+    label: "Simpang Gumnut Cafe & Bakery"
+    pos: [467.0, 317.0]
+  - id: 10
+    label: "Simpang Boulevard - Gelap Nyawang"
+    pos: [556.0, 312.0]
+  - id: 11
+    label: "Jl. Banyakcipta Kidul Utara"
+    pos: [525.0, 281.0]
+  - id: 12
+    label: "Boulevard Tengah (Depan Momiji Cafe)"
+    pos: [562.0, 208.0]
+  - id: 13
+    label: "Jl. Banyakcipta Kidul Selatan"
+    pos: [527.0, 129.0]
+  - id: 14
+    label: "Banyakcipta Barat Daya (Cul-de-sac)"
+    pos: [424.0, 125.0]
+  - id: 15
+    label: "Simpang Boulevard - Jl. Bandung Tempo Dulu"
+    pos: [566.0, 108.0]
+  - id: 16
+    label: "Pos Gate 2 Selatan (Barat Laut Tatar Jingga)"
+    pos: [602.0, 277.0]
+  - id: 17
+    label: "Jl. Jinggasastra Utara"
+    pos: [657.0, 281.0]
+  - id: 18
+    label: "Jl. Jingga Hegar Utara"
+    pos: [754.0, 277.0]
+  - id: 19
+    label: "Jl. Jingga Prabu Utara"
+    pos: [807.0, 280.0]
+  - id: 20
+    label: "Ujung Timur Tatar Jingga Utara"
+    pos: [842.0, 282.0]
+  - id: 21
+    label: "Barat Jl. Jinggasastra Selatan"
+    pos: [602.0, 144.0]
+  - id: 22
+    label: "Jl. Jinggasastra Selatan"
+    pos: [656.0, 147.0]
+  - id: 23
+    label: "Jl. Jingga Hegar Selatan"
+    pos: [751.0, 144.0]
+  - id: 24
+    label: "Jl. Jingga Prabu Selatan"
+    pos: [807.0, 145.0]
+  - id: 25
+    label: "Ujung Timur Jl. Bandung Tempo Dulu"
+    pos: [838.0, 114.0]
 
 edges:
   - from: 0
     to: 1
-    weight: 3.0
+    weight: 465.0
+    capacity: 10.0
+  - from: 1
+    to: 2
+    weight: 210.0
     capacity: 10.0
   - from: 0
-    to: 2
-    weight: 8.0
+    to: 8
+    weight: 555.0
     capacity: 10.0
   - from: 1
-    to: 2
-    weight: 2.0
-    capacity: 5.0
-  - from: 1
-    to: 3
-    weight: 6.0
-    capacity: 8.0
+    to: 7
+    weight: 530.0
+    capacity: 10.0
   - from: 2
     to: 3
-    weight: 3.0
-    capacity: 8.0
+    weight: 305.0
+    capacity: 10.0
+  - from: 3
+    to: 5
+    weight: 200.0
+    capacity: 10.0
   - from: 3
     to: 4
-    weight: 5.0
-    capacity: 12.0
+    weight: 260.0
+    capacity: 10.0
+  - from: 4
+    to: 6
+    weight: 115.0
+    capacity: 10.0
+  - from: 5
+    to: 6
+    weight: 355.0
+    capacity: 10.0
+  - from: 7
+    to: 6
+    weight: 140.0
+    capacity: 10.0
+  - from: 7
+    to: 9
+    weight: 95.0
+    capacity: 10.0
+  - from: 8
+    to: 10
+    weight: 265.0
+    capacity: 10.0
+  - from: 8
+    to: 16
+    weight: 240.0
+    capacity: 10.0
+  - from: 9
+    to: 10
+    weight: 210.0
+    capacity: 10.0
+  - from: 10
+    to: 12
+    weight: 245.0
+    capacity: 10.0
+  - from: 12
+    to: 15
+    weight: 235.0
+    capacity: 10.0
+  - from: 9
+    to: 11
+    weight: 210.0
+    capacity: 10.0
+  - from: 10
+    to: 11
+    weight: 145.0
+    capacity: 10.0
+  - from: 11
+    to: 13
+    weight: 355.0
+    capacity: 10.0
+  - from: 12
+    to: 13
+    weight: 265.0
+    capacity: 10.0
+  - from: 9
+    to: 14
+    weight: 505.0
+    capacity: 10.0
+  - from: 10
+    to: 16
+    weight: 190.0
+    capacity: 10.0
+  - from: 16
+    to: 17
+    weight: 130.0
+    capacity: 10.0
+  - from: 17
+    to: 18
+    weight: 225.0
+    capacity: 10.0
+  - from: 18
+    to: 19
+    weight: 125.0
+    capacity: 10.0
+  - from: 19
+    to: 20
+    weight: 80.0
+    capacity: 10.0
+  - from: 16
+    to: 21
+    weight: 310.0
+    capacity: 10.0
+  - from: 17
+    to: 22
+    weight: 310.0
+    capacity: 10.0
+  - from: 18
+    to: 23
+    weight: 310.0
+    capacity: 10.0
+  - from: 19
+    to: 24
+    weight: 315.0
+    capacity: 10.0
+  - from: 20
+    to: 25
+    weight: 390.0
+    capacity: 10.0
+  - from: 15
+    to: 21
+    weight: 170.0
+    capacity: 10.0
+  - from: 21
+    to: 22
+    weight: 125.0
+    capacity: 10.0
+  - from: 22
+    to: 23
+    weight: 220.0
+    capacity: 10.0
+  - from: 23
+    to: 24
+    weight: 130.0
+    capacity: 10.0
+  - from: 24
+    to: 25
+    weight: 145.0
+    capacity: 10.0
 
 execution_plan:
   start_node: 0
-  goal_node: 4
+  goal_node: 25
+  algorithm: spanning_tree
   events:
     - step: 1
       type: "DYNAMIC_EDGE_WEIGHT"
-      target_edge: [0, 1]
-      new_weight: 95.0
-      description: "Portal Siskamling dikunci total (Edge 0 -> 1), algoritma MST menghitung ulang topologi jaringan komunikasi antar pos terpendek!"
+      target_edge: [4, 6]
+      new_weight: .inf
+      description: "Portal Gate 1 Kancahnangkub (Edge 4 <-> 6, 115 m) ditutup malam hari (23.00-05.00 WIB)."
+    - step: 2
+      type: "DYNAMIC_EDGE_WEIGHT"
+      target_edge: [8, 16]
+      new_weight: .inf
+      description: "Portal Gate 2 Tatar Jingga Barat (Edge 8 <-> 16, 240 m) ditutup malam hari (23.00-05.00 WIB)."

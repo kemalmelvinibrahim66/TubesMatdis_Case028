@@ -1,0 +1,1068 @@
+{
+  "metadata": {
+    "case_id": "case_28_siskamling_portal",
+    "title": "Jaringan Komunikasi Patroli Zona Inti KBP: Penutupan Portal Siskamling (26 Node)",
+    "description": "Skenario Zona Inti Kota Baru Parahyangan (N=26 simpul persimpangan, E=36 ruas jalan nyata) berbasis Minimum Spanning Tree (MST). Penutupan dua portal siskamling malam hari (23.00-05.00 WIB) memutus sisi MST aktif, menuntut perbaikan topologi jaringan patroli/HT terpendek.",
+    "algorithm": "SubtreeRepair"
+  },
+  "total_steps": 33,
+  "initial_topology": {
+    "nodes": [
+      {
+        "id": 0,
+        "label": "Pos Komando Utara (Gerbang Jl. Gelap Nyawang)",
+        "pos": [
+          565.0,
+          564.0
+        ]
+      },
+      {
+        "id": 1,
+        "label": "Simpang Koridor Utara Tengah",
+        "pos": [
+          365.0,
+          559.0
+        ]
+      },
+      {
+        "id": 2,
+        "label": "Simpang Utara Barat (Bumi Hejo)",
+        "pos": [
+          274.0,
+          561.0
+        ]
+      },
+      {
+        "id": 3,
+        "label": "Jl. Guru Gantangan Utara",
+        "pos": [
+          274.0,
+          431.0
+        ]
+      },
+      {
+        "id": 4,
+        "label": "Pos Gate 1 Utara (Kancahnangkub Utara)",
+        "pos": [
+          381.0,
+          400.0
+        ]
+      },
+      {
+        "id": 5,
+        "label": "Simpang Guru Gantangan - Kancahnangkub",
+        "pos": [
+          243.0,
+          355.0
+        ]
+      },
+      {
+        "id": 6,
+        "label": "Pos Gate 1 Selatan (Kancahnangkub Kidul)",
+        "pos": [
+          395.0,
+          352.0
+        ]
+      },
+      {
+        "id": 7,
+        "label": "Simpang Kancahnangkub Timur",
+        "pos": [
+          455.0,
+          357.0
+        ]
+      },
+      {
+        "id": 8,
+        "label": "Pos Gate 2 Utara (Gelap Nyawang / Pancasona)",
+        "pos": [
+          650.0,
+          355.0
+        ]
+      },
+      {
+        "id": 9,
+        "label": "Simpang Gumnut Cafe & Bakery",
+        "pos": [
+          467.0,
+          317.0
+        ]
+      },
+      {
+        "id": 10,
+        "label": "Simpang Boulevard - Gelap Nyawang",
+        "pos": [
+          556.0,
+          312.0
+        ]
+      },
+      {
+        "id": 11,
+        "label": "Jl. Banyakcipta Kidul Utara",
+        "pos": [
+          525.0,
+          281.0
+        ]
+      },
+      {
+        "id": 12,
+        "label": "Boulevard Tengah (Depan Momiji Cafe)",
+        "pos": [
+          562.0,
+          208.0
+        ]
+      },
+      {
+        "id": 13,
+        "label": "Jl. Banyakcipta Kidul Selatan",
+        "pos": [
+          527.0,
+          129.0
+        ]
+      },
+      {
+        "id": 14,
+        "label": "Banyakcipta Barat Daya (Cul-de-sac)",
+        "pos": [
+          424.0,
+          125.0
+        ]
+      },
+      {
+        "id": 15,
+        "label": "Simpang Boulevard - Jl. Bandung Tempo Dulu",
+        "pos": [
+          566.0,
+          108.0
+        ]
+      },
+      {
+        "id": 16,
+        "label": "Pos Gate 2 Selatan (Barat Laut Tatar Jingga)",
+        "pos": [
+          602.0,
+          277.0
+        ]
+      },
+      {
+        "id": 17,
+        "label": "Jl. Jinggasastra Utara",
+        "pos": [
+          657.0,
+          281.0
+        ]
+      },
+      {
+        "id": 18,
+        "label": "Jl. Jingga Hegar Utara",
+        "pos": [
+          754.0,
+          277.0
+        ]
+      },
+      {
+        "id": 19,
+        "label": "Jl. Jingga Prabu Utara",
+        "pos": [
+          807.0,
+          280.0
+        ]
+      },
+      {
+        "id": 20,
+        "label": "Ujung Timur Tatar Jingga Utara",
+        "pos": [
+          842.0,
+          282.0
+        ]
+      },
+      {
+        "id": 21,
+        "label": "Barat Jl. Jinggasastra Selatan",
+        "pos": [
+          602.0,
+          144.0
+        ]
+      },
+      {
+        "id": 22,
+        "label": "Jl. Jinggasastra Selatan",
+        "pos": [
+          656.0,
+          147.0
+        ]
+      },
+      {
+        "id": 23,
+        "label": "Jl. Jingga Hegar Selatan",
+        "pos": [
+          751.0,
+          144.0
+        ]
+      },
+      {
+        "id": 24,
+        "label": "Jl. Jingga Prabu Selatan",
+        "pos": [
+          807.0,
+          145.0
+        ]
+      },
+      {
+        "id": 25,
+        "label": "Ujung Timur Jl. Bandung Tempo Dulu",
+        "pos": [
+          838.0,
+          114.0
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "weight": 465.0
+      },
+      {
+        "from": 0,
+        "to": 8,
+        "weight": 555.0
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "weight": 210.0
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "weight": 530.0
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "weight": 305.0
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "weight": 200.0
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "weight": 260.0
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "weight": Infinity
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "weight": 355.0
+      },
+      {
+        "from": 7,
+        "to": 6,
+        "weight": 140.0
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "weight": 95.0
+      },
+      {
+        "from": 8,
+        "to": 10,
+        "weight": 265.0
+      },
+      {
+        "from": 8,
+        "to": 16,
+        "weight": Infinity
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "weight": 210.0
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "weight": 210.0
+      },
+      {
+        "from": 9,
+        "to": 14,
+        "weight": 505.0
+      },
+      {
+        "from": 10,
+        "to": 12,
+        "weight": 245.0
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "weight": 145.0
+      },
+      {
+        "from": 10,
+        "to": 16,
+        "weight": 190.0
+      },
+      {
+        "from": 11,
+        "to": 13,
+        "weight": 355.0
+      },
+      {
+        "from": 12,
+        "to": 15,
+        "weight": 235.0
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "weight": 265.0
+      },
+      {
+        "from": 15,
+        "to": 21,
+        "weight": 170.0
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "weight": 130.0
+      },
+      {
+        "from": 16,
+        "to": 21,
+        "weight": 310.0
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "weight": 225.0
+      },
+      {
+        "from": 17,
+        "to": 22,
+        "weight": 310.0
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "weight": 125.0
+      },
+      {
+        "from": 18,
+        "to": 23,
+        "weight": 310.0
+      },
+      {
+        "from": 19,
+        "to": 20,
+        "weight": 80.0
+      },
+      {
+        "from": 19,
+        "to": 24,
+        "weight": 315.0
+      },
+      {
+        "from": 20,
+        "to": 25,
+        "weight": 390.0
+      },
+      {
+        "from": 21,
+        "to": 22,
+        "weight": 125.0
+      },
+      {
+        "from": 22,
+        "to": 23,
+        "weight": 220.0
+      },
+      {
+        "from": 23,
+        "to": 24,
+        "weight": 130.0
+      },
+      {
+        "from": 24,
+        "to": 25,
+        "weight": 145.0
+      }
+    ]
+  },
+  "raw_quantitative_trace": [
+    {
+      "step": 1,
+      "event_type": "INITIALIZATION",
+      "mutations": {
+        "total_nodes": 26,
+        "total_edges": 36,
+        "sorted_edges": [
+          [
+            19,
+            20,
+            80.0
+          ],
+          [
+            7,
+            9,
+            95.0
+          ],
+          [
+            4,
+            6,
+            115.0
+          ],
+          [
+            18,
+            19,
+            125.0
+          ],
+          [
+            21,
+            22,
+            125.0
+          ],
+          [
+            16,
+            17,
+            130.0
+          ],
+          [
+            23,
+            24,
+            130.0
+          ],
+          [
+            6,
+            7,
+            140.0
+          ],
+          [
+            10,
+            11,
+            145.0
+          ],
+          [
+            24,
+            25,
+            145.0
+          ],
+          [
+            15,
+            21,
+            170.0
+          ],
+          [
+            10,
+            16,
+            190.0
+          ],
+          [
+            3,
+            5,
+            200.0
+          ],
+          [
+            1,
+            2,
+            210.0
+          ],
+          [
+            9,
+            10,
+            210.0
+          ],
+          [
+            9,
+            11,
+            210.0
+          ],
+          [
+            22,
+            23,
+            220.0
+          ],
+          [
+            17,
+            18,
+            225.0
+          ],
+          [
+            12,
+            15,
+            235.0
+          ],
+          [
+            8,
+            16,
+            240.0
+          ],
+          [
+            10,
+            12,
+            245.0
+          ],
+          [
+            3,
+            4,
+            260.0
+          ],
+          [
+            8,
+            10,
+            265.0
+          ],
+          [
+            12,
+            13,
+            265.0
+          ],
+          [
+            2,
+            3,
+            305.0
+          ],
+          [
+            16,
+            21,
+            310.0
+          ],
+          [
+            17,
+            22,
+            310.0
+          ],
+          [
+            18,
+            23,
+            310.0
+          ],
+          [
+            19,
+            24,
+            315.0
+          ],
+          [
+            5,
+            6,
+            355.0
+          ],
+          [
+            11,
+            13,
+            355.0
+          ],
+          [
+            20,
+            25,
+            390.0
+          ],
+          [
+            0,
+            1,
+            465.0
+          ],
+          [
+            9,
+            14,
+            505.0
+          ],
+          [
+            1,
+            7,
+            530.0
+          ],
+          [
+            0,
+            8,
+            555.0
+          ]
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          19,
+          20
+        ],
+        "weight": 80.0,
+        "current_mst_count": 1,
+        "total_cost": 80.0
+      }
+    },
+    {
+      "step": 3,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          7,
+          9
+        ],
+        "weight": 95.0,
+        "current_mst_count": 2,
+        "total_cost": 175.0
+      }
+    },
+    {
+      "step": 4,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          4,
+          6
+        ],
+        "weight": 115.0,
+        "current_mst_count": 3,
+        "total_cost": 290.0
+      }
+    },
+    {
+      "step": 5,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          18,
+          19
+        ],
+        "weight": 125.0,
+        "current_mst_count": 4,
+        "total_cost": 415.0
+      }
+    },
+    {
+      "step": 6,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          21,
+          22
+        ],
+        "weight": 125.0,
+        "current_mst_count": 5,
+        "total_cost": 540.0
+      }
+    },
+    {
+      "step": 7,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          16,
+          17
+        ],
+        "weight": 130.0,
+        "current_mst_count": 6,
+        "total_cost": 670.0
+      }
+    },
+    {
+      "step": 8,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          23,
+          24
+        ],
+        "weight": 130.0,
+        "current_mst_count": 7,
+        "total_cost": 800.0
+      }
+    },
+    {
+      "step": 9,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          6,
+          7
+        ],
+        "weight": 140.0,
+        "current_mst_count": 8,
+        "total_cost": 940.0
+      }
+    },
+    {
+      "step": 10,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          10,
+          11
+        ],
+        "weight": 145.0,
+        "current_mst_count": 9,
+        "total_cost": 1085.0
+      }
+    },
+    {
+      "step": 11,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          24,
+          25
+        ],
+        "weight": 145.0,
+        "current_mst_count": 10,
+        "total_cost": 1230.0
+      }
+    },
+    {
+      "step": 12,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          15,
+          21
+        ],
+        "weight": 170.0,
+        "current_mst_count": 11,
+        "total_cost": 1400.0
+      }
+    },
+    {
+      "step": 13,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          10,
+          16
+        ],
+        "weight": 190.0,
+        "current_mst_count": 12,
+        "total_cost": 1590.0
+      }
+    },
+    {
+      "step": 14,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          3,
+          5
+        ],
+        "weight": 200.0,
+        "current_mst_count": 13,
+        "total_cost": 1790.0
+      }
+    },
+    {
+      "step": 15,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          1,
+          2
+        ],
+        "weight": 210.0,
+        "current_mst_count": 14,
+        "total_cost": 2000.0
+      }
+    },
+    {
+      "step": 16,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          9,
+          10
+        ],
+        "weight": 210.0,
+        "current_mst_count": 15,
+        "total_cost": 2210.0
+      }
+    },
+    {
+      "step": 17,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          22,
+          23
+        ],
+        "weight": 220.0,
+        "current_mst_count": 16,
+        "total_cost": 2430.0
+      }
+    },
+    {
+      "step": 18,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          17,
+          18
+        ],
+        "weight": 225.0,
+        "current_mst_count": 17,
+        "total_cost": 2655.0
+      }
+    },
+    {
+      "step": 19,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          12,
+          15
+        ],
+        "weight": 235.0,
+        "current_mst_count": 18,
+        "total_cost": 2890.0
+      }
+    },
+    {
+      "step": 20,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          8,
+          16
+        ],
+        "weight": 240.0,
+        "current_mst_count": 19,
+        "total_cost": 3130.0
+      }
+    },
+    {
+      "step": 21,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          10,
+          12
+        ],
+        "weight": 245.0,
+        "current_mst_count": 20,
+        "total_cost": 3375.0
+      }
+    },
+    {
+      "step": 22,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          3,
+          4
+        ],
+        "weight": 260.0,
+        "current_mst_count": 21,
+        "total_cost": 3635.0
+      }
+    },
+    {
+      "step": 23,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          12,
+          13
+        ],
+        "weight": 265.0,
+        "current_mst_count": 22,
+        "total_cost": 3900.0
+      }
+    },
+    {
+      "step": 24,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          2,
+          3
+        ],
+        "weight": 305.0,
+        "current_mst_count": 23,
+        "total_cost": 4205.0
+      }
+    },
+    {
+      "step": 25,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          0,
+          1
+        ],
+        "weight": 465.0,
+        "current_mst_count": 24,
+        "total_cost": 4670.0
+      }
+    },
+    {
+      "step": 26,
+      "event_type": "EDGE_ADDED",
+      "mutations": {
+        "added_edge": [
+          9,
+          14
+        ],
+        "weight": 505.0,
+        "current_mst_count": 25,
+        "total_cost": 5175.0
+      }
+    },
+    {
+      "step": 27,
+      "event_type": "MST_COMPLETE",
+      "mutations": {
+        "mst_edge_count": 25,
+        "total_cost": 5175.0,
+        "components": 1,
+        "is_connected": true
+      }
+    },
+    {
+      "step": 28,
+      "event_type": "UPDATE_WEIGHT_EVENT",
+      "mutations": {
+        "target_edge": [
+          4,
+          6
+        ],
+        "old_weight": 115.0,
+        "new_weight": "inf"
+      }
+    },
+    {
+      "step": 29,
+      "event_type": "SUBTREE_SPLIT",
+      "mutations": {
+        "removed_edge": [
+          4,
+          6
+        ],
+        "old_weight": 115.0,
+        "subtree_a_size": 6,
+        "subtree_b_size": 20,
+        "subtree_a_nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "subtree_b_nodes": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ]
+      }
+    },
+    {
+      "step": 30,
+      "event_type": "SUBTREE_REPAIRED",
+      "mutations": {
+        "replacement_edge": [
+          5,
+          6
+        ],
+        "replacement_weight": 355.0,
+        "delta_cost": 240.0,
+        "current_mst_count": 25,
+        "total_cost": 5415.0
+      }
+    },
+    {
+      "step": 31,
+      "event_type": "UPDATE_WEIGHT_EVENT",
+      "mutations": {
+        "target_edge": [
+          8,
+          16
+        ],
+        "old_weight": 240.0,
+        "new_weight": "inf"
+      }
+    },
+    {
+      "step": 32,
+      "event_type": "SUBTREE_SPLIT",
+      "mutations": {
+        "removed_edge": [
+          8,
+          16
+        ],
+        "old_weight": 240.0,
+        "subtree_a_size": 1,
+        "subtree_b_size": 25,
+        "subtree_a_nodes": [
+          8
+        ],
+        "subtree_b_nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ]
+      }
+    },
+    {
+      "step": 33,
+      "event_type": "SUBTREE_REPAIRED",
+      "mutations": {
+        "replacement_edge": [
+          8,
+          10
+        ],
+        "replacement_weight": 265.0,
+        "delta_cost": 25.0,
+        "current_mst_count": 25,
+        "total_cost": 5440.0
+      }
+    }
+  ]
+}

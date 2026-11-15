@@ -1,0 +1,295 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Fishbone-6M-KBP-Kasus28-Final" id="fishbone-kbp-28-final">
+    <mxGraphModel dx="2560" dy="1300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2560" pageHeight="1220" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_box" value="&lt;b&gt;DIAGRAM FISHBONE 6M: LANDASAN PEMODELAN GRAF KASUS 28 (SISKAMLING PORTAL)&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px;color:#475569;&quot;&gt;Studi Kasus Zona Inti Kota Baru Parahyangan (KBP, 26 Node) — Acuan Node (V), Edge (E), Weight (w), &amp;amp; Dynamic MST&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;strokeWidth=1.5;fontColor=#0F172A;fontSize=18;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="220" y="22" width="1810" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="main_spine" style="endArrow=classic;html=1;strokeWidth=5;strokeColor=#1E293B;endSize=10;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="630" as="sourcePoint" />
+            <mxPoint x="2030" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fish_head" value="&lt;b style=&quot;font-size: 16px; color: #991B1B;&quot;&gt;MASALAH UTAMA:&lt;/b&gt;&lt;br&gt;&lt;hr style=&quot;border:0.5px solid #DC2626;&quot;&gt;&lt;b&gt;Disrupsi konektivitas MST Zona Inti KBP (26 Node) pada jam malam&lt;/b&gt; akibat penutupan &lt;b&gt;2 Gate Sekunder (23.00–05.00 WIB)&lt;/b&gt;:&lt;br&gt;• &lt;b&gt;Gate 1 (e&lt;sub&gt;G1&lt;/sub&gt;, Barat):&lt;/b&gt; ruas Kancahnangkub Utara ↔ simpang Jl. Kancahnangkub Kidul&lt;br&gt;• &lt;b&gt;Gate 2 (e&lt;sub&gt;G2&lt;/sub&gt;, Timur):&lt;/b&gt; ruas tembus tikungan Jl. Gelap Nyawang (Bumi Pancasona) ↔ sudut barat laut Tatar Jingga&lt;br&gt;&lt;br&gt;&lt;span style=&quot;font-size: 13px; background-color: #FEE2E2; color: #991B1B;&quot;&gt;&lt;b&gt;Tuntutan MST:&lt;/b&gt; G' = G − {e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt;}. Penutupan e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt; ∈ T&lt;sub&gt;siang&lt;/sub&gt; memutus jalur dari Pos Komando Utara (&lt;b&gt;Node 0&lt;/b&gt;) dan memecah MST menjadi &lt;b&gt;3 komponen (19 + 6 + 1 node)&lt;/b&gt; → sambung ulang via sisi pengganti termurah (&lt;b&gt;Dynamic Subtree Repair&lt;/b&gt; vs. &lt;b&gt;Kruskal ulang&lt;/b&gt;).&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF2F2;strokeColor=#EF4444;strokeWidth=2;fontColor=#1E293B;fontSize=13.5;shadow=1;spacing=10;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="430" width="445" height="395" as="geometry" />
+        </mxCell>
+        <mxCell id="note_box" value="&lt;b&gt;Catatan Ruang Lingkup Pemodelan:&lt;/b&gt; MST murni hanya menggunakan &lt;b&gt;(V, E, w)&lt;/b&gt;. Faktor kapasitas jaringan (fiber/wireless), catu daya, beban radio HT, verifikasi tamu, cuaca, dan waktu tempuh (konsep &lt;i&gt;shortest path&lt;/i&gt;) &lt;b&gt;tidak dimodelkan&lt;/b&gt; sebagai bobot graf sehingga dikeluarkan dari fishbone." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F5F9;strokeColor=#94A3B8;dashed=1;fontColor=#334155;fontSize=13;align=left;verticalAlign=middle;spacing=10;" parent="1" vertex="1">
+          <mxGeometry x="2050" y="855" width="445" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="box_machine" value="&lt;b&gt;MACHINE&lt;br&gt;&lt;span style='font-size:15px;color:#1E40AF;'&gt;[Landasan NODE / Simpul V]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="395" y="115" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_machine" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545.0" y="190" as="sourcePoint" />
+            <mxPoint x="730.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_machine_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#3B82F6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="486.9" y="242" as="sourcePoint" />
+            <mxPoint x="566.9" y="242" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_0" value="Node 0: Pos Komando di Gerbang Utara Jl. Gelap Nyawang (utara La Pantry / akses Jl. Parahyangan Raya)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="108.9" y="206.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#3B82F6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="528.9" y="342" as="sourcePoint" />
+            <mxPoint x="608.9" y="342" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_1" value="Pos Gate 1 &amp;amp; Gate 2: node persimpangan pengapit 2 sisi gate yang ditutup saat jam malam" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="150.9" y="306.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#3B82F6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="571.0" y="442" as="sourcePoint" />
+            <mxPoint x="651.0" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_2" value="26 Node Aktif: Utara (Bumi Hejo–Gelap Nyawang), Barat (Guru Gantangan–Kancahnangkub), Boulevard, Banyakcipta, Jingga" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="193.0" y="406.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_machine_3" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#3B82F6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="613.0" y="542" as="sourcePoint" />
+            <mxPoint x="693.0" y="542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_machine_3" value="Eliminasi Batas: titik luar Zona Merah &amp;amp; titik nonaktif selatan (Guru Gantangan/Banyakcipta/Boulevard) dikeluarkan" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="235.0" y="506.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="box_measurement" value="&lt;b&gt;MEASUREMENT&lt;br&gt;&lt;span style='font-size:15px;color:#9A3412;'&gt;[Landasan WEIGHT / Bobot w]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#F97316;fontColor=#7C2D12;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="965" y="115" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_measurement" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1115.0" y="190" as="sourcePoint" />
+            <mxPoint x="1300.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_measurement_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#F97316;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1056.9" y="242" as="sourcePoint" />
+            <mxPoint x="1136.9" y="242" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_0" value="w(e) = panjang rute jalan nyata (meter) diukur mengikuti jalur Google Maps (termasuk kurva Gelap Nyawang)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="678.9" y="206.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#F97316;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1098.9" y="342" as="sourcePoint" />
+            <mxPoint x="1178.9" y="342" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_1" value="Satu satuan bobot tunggal, positif &amp;amp; simetris: w(u,v) = w(v,u) &amp;gt; 0 (tanpa campur kapasitas/waktu tempuh)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="720.9" y="306.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#F97316;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1141.0" y="442" as="sourcePoint" />
+            <mxPoint x="1221.0" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_2" value="Event jam malam: hapus sisi e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt; → G' = G − {e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt;} (valid selama G' terhubung)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="763.0" y="406.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_measurement_3" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#F97316;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1183.0" y="542" as="sourcePoint" />
+            <mxPoint x="1263.0" y="542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_measurement_3" value="Bobot sama → tie-break deterministik memakai pasangan (min(u,v), max(u,v)) / ID sisi terkecil" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="805.0" y="506.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="box_material" value="&lt;b&gt;MATERIAL&lt;br&gt;&lt;span style='font-size:15px;color:#065F46;'&gt;[Landasan EDGE / Sisi E]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#10B981;fontColor=#064E3B;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="1535" y="115" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_material" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1685.0" y="190" as="sourcePoint" />
+            <mxPoint x="1870.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_material_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#10B981;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1626.9" y="242" as="sourcePoint" />
+            <mxPoint x="1706.9" y="242" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_0" value="Sisi (u,v) ∈ E hanya ditarik mengikuti ruas jalan fisik langsung tanpa memotong blok bangunan" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1248.9" y="206.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#10B981;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1668.9" y="342" as="sourcePoint" />
+            <mxPoint x="1748.9" y="342" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_1" value="Syarat gate masuk MST: w(e&lt;sub&gt;G1&lt;/sub&gt;) &amp;amp; w(e&lt;sub&gt;G2&lt;/sub&gt;) lebih pendek dari jalur alternatifnya (w(Gate 2) &amp;lt; w(Gelap Nyawang–Boulevard))" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1290.9" y="306.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#10B981;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1711.0" y="442" as="sourcePoint" />
+            <mxPoint x="1791.0" y="442" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_2" value="Syarat non-bridge: tiap komponen tetap punya akses alternatif via arteri (Guru Gantangan &amp;amp; Boulevard)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1333.0" y="406.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_material_3" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#10B981;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1753.0" y="542" as="sourcePoint" />
+            <mxPoint x="1833.0" y="542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_material_3" value="Sisi hanya melalui jalur darat; dilarang menarik sisi melintasi danau atau aliran air" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1375.0" y="506.0" width="370" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="box_methods" value="&lt;b&gt;METHODS&lt;br&gt;&lt;span style='font-size:15px;color:#5B21B6;'&gt;[Landasan ALGORITMA &amp;amp; EVENT]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#8B5CF6;fontColor=#4C1D95;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="395" y="1075" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_methods" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545.0" y="1075" as="sourcePoint" />
+            <mxPoint x="730.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_methods_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#8B5CF6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620.1" y="702" as="sourcePoint" />
+            <mxPoint x="700.1" y="702" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_0" value="Fase Siang: Kruskal + Union-Find membentuk MST awal T&lt;sub&gt;siang&lt;/sub&gt; pada 26 node (semua gate terbuka)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="242.1" y="670.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#8B5CF6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="584.3" y="788" as="sourcePoint" />
+            <mxPoint x="664.3" y="788" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_1" value="Event Malam (23.00–05.00): Hapus 2 sisi gate → G' = G − {e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt;}" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="206.3" y="756.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#8B5CF6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="548.6" y="874" as="sourcePoint" />
+            <mxPoint x="628.6" y="874" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_2" value="Deteksi Putus: penghapusan e&lt;sub&gt;G1&lt;/sub&gt;, e&lt;sub&gt;G2&lt;/sub&gt; ∈ T&lt;sub&gt;siang&lt;/sub&gt; memecah MST jadi 3 komponen (19, 6, &amp;amp; 1 node)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="170.6" y="842.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_3" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#8B5CF6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="512.8" y="960" as="sourcePoint" />
+            <mxPoint x="592.8" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_3" value="Dynamic Subtree Repair: pilih cut-edge non-pohon termurah penyambung komponen terpisah" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="134.8" y="928.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_methods_4" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#8B5CF6;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="482.0" y="1034" as="sourcePoint" />
+            <mxPoint x="562.0" y="1034" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_methods_4" value="Validasi: total bobot repair = Kruskal ulang pada G'; ukur selisih step &amp;amp; runtime" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="104.0" y="1002.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="box_man" value="&lt;b&gt;MAN&lt;br&gt;&lt;span style='font-size:15px;color:#831843;'&gt;[Landasan PENGGUNA &amp;amp; PEMICU EVENT]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#EC4899;fontColor=#831843;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="965" y="1075" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_man" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1115.0" y="1075" as="sourcePoint" />
+            <mxPoint x="1300.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_man_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#EC4899;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1172.2" y="745" as="sourcePoint" />
+            <mxPoint x="1252.2" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_0" value="Petugas Pos Komando Utara (Node 0 di Jl. Gelap Nyawang) memantau konektivitas jaringan" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="794.2" y="713.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#EC4899;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1122.3" y="865" as="sourcePoint" />
+            <mxPoint x="1202.3" y="865" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_1" value="Petugas Gate 1 &amp;amp; 2 menutup/membuka portal jam malam (pemicu event graf)" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="744.3" y="833.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_man_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#EC4899;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1072.4" y="985" as="sourcePoint" />
+            <mxPoint x="1152.4" y="985" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_man_2" value="Unit patroli motor &amp;amp; jaringan komunikasi mengikuti topologi MST hasil perbaikan" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="694.4" y="953.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="box_environment" value="&lt;b&gt;ENVIRONMENT&lt;br&gt;&lt;span style='font-size:15px;color:#155E75;'&gt;[Landasan GEOMETRI ZONA KBP]&lt;/span&gt;&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CFFAFE;strokeColor=#06B6D4;fontColor=#164E63;fontSize=17;align=center;verticalAlign=middle;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="1535" y="1075" width="300" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_environment" style="endArrow=none;html=1;strokeWidth=3.5;strokeColor=#475569;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1685.0" y="1075" as="sourcePoint" />
+            <mxPoint x="1870.0" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_edge_environment_0" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#06B6D4;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1754.7" y="715" as="sourcePoint" />
+            <mxPoint x="1834.7" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_0" value="Danau &amp;amp; aliran air (area biru timur/selatan): penghalang fisik sehingga sisi tidak melintasi air" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1376.7" y="683.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_1" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#06B6D4;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1713.1" y="815" as="sourcePoint" />
+            <mxPoint x="1793.1" y="815" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_1" value="Gate 1 &amp;amp; 2 merupakan jalur pintas (shortcut) antar-sektor sehingga penutupannya memaksa memutar" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1335.1" y="783.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_2" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#06B6D4;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1671.5" y="915" as="sourcePoint" />
+            <mxPoint x="1751.5" y="915" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_2" value="Boulevard Tengah &amp;amp; Jl. Bandung Tempo Dulu menjadi jalur arteri alternatif antar-kluster" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1293.5" y="883.0" width="370" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_edge_environment_3" style="endArrow=classic;html=1;strokeWidth=1.8;strokeColor=#06B6D4;endSize=5;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1632.0" y="1010" as="sourcePoint" />
+            <mxPoint x="1712.0" y="1010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sub_text_environment_3" value="Batas Zona Merah KBP membatasi graf tepat pada 26 simpul aktif yang relevan" style="text;html=1;align=right;verticalAlign=middle;fontSize=14;fontColor=#1E293B;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1254.0" y="978.0" width="370" height="64" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
