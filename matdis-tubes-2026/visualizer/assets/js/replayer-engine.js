@@ -1,45 +1,6 @@
 const DATA_URL = "samples/sample_case28_siskamling_portal.json";
 const EDGE_KEY = (from, to) => `${Math.min(from, to)}-${Math.max(from, to)}`;
 
-const groupColors = {
-  command: "#e89000",
-  gate: "#e53939",
-  north: "#0aa875",
-  west: "#0785c8",
-  boulevard: "#d97800",
-  banycipta: "#0c8b80",
-  tatar: "#8b2bd1"
-};
-
-const nodeGroups = {
-  0: "command",
-  1: "north",
-  2: "north",
-  3: "west",
-  4: "gate",
-  5: "west",
-  6: "gate",
-  7: "west",
-  8: "gate",
-  9: "boulevard",
-  10: "boulevard",
-  11: "banycipta",
-  12: "boulevard",
-  13: "banycipta",
-  14: "banycipta",
-  15: "boulevard",
-  16: "gate",
-  17: "tatar",
-  18: "tatar",
-  19: "tatar",
-  20: "tatar",
-  21: "tatar",
-  22: "tatar",
-  23: "tatar",
-  24: "tatar",
-  25: "tatar"
-};
-
 const elements = {
   edges: document.getElementById("edges-layer"),
   labels: document.getElementById("labels-layer"),
@@ -52,7 +13,8 @@ let currentMode = "day";
 let replayIndex = 0;
 let selectedNodeId = null;
 let showAllWeights = true;
-const componentColors = ["#1873c4", "#d97706", "#8b2bd1"];
+const connectedColor = "#1873c4";
+const componentColors = [connectedColor, "#d97706", "#8b2bd1"];
 
 function svgElement(name, attributes) {
   const element = document.createElementNS("http://www.w3.org/2000/svg", name);
@@ -78,10 +40,10 @@ function addLine(layer, from, to, className) {
   return { start, end };
 }
 
-function addEdgeLabel(edge, start, end, className) {
+function addEdgeLabel(edge, start, end, className, isClosedGate = false) {
   const x = (start.x + end.x) / 2;
   const y = (start.y + end.y) / 2 - 8;
-  const label = String(Math.round(edge.weight));
+  const label = isClosedGate ? "∞" : `${Math.round(edge.weight)}m`;
   const width = label.length * 7 + 12;
   const group = svgElement("g", { class: `edge-label ${className}` });
   group.append(svgElement("rect", {
@@ -91,7 +53,7 @@ function addEdgeLabel(edge, start, end, className) {
     height: 16
   }));
   const text = svgElement("text", { x, y });
-  text.textContent = `${label}m`;
+  text.textContent = label;
   group.append(text);
   elements.labels.append(group);
 }
@@ -150,7 +112,7 @@ function drawGraph() {
     const showLabel = showAllWeights || isMst || isClosedGate || isActiveGate || isRepair;
     if (showLabel) {
       const labelClass = isRepair ? "is-repair" : (isClosedGate || isActiveGate ? "is-gate" : (isMst ? "is-mst" : ""));
-      addEdgeLabel(edge, start, end, labelClass);
+      addEdgeLabel(edge, start, end, labelClass, isClosedGate);
     }
   });
 
@@ -159,9 +121,9 @@ function drawGraph() {
     const componentIndex = phase
       ? phase.components.findIndex((component) => component.includes(node.id))
       : -1;
-    const nodeColor = componentIndex >= 0 && phase.components.length > 1
+    const nodeColor = phase && phase.components.length > 1 && componentIndex >= 0
       ? componentColors[componentIndex % componentColors.length]
-      : groupColors[nodeGroups[node.id]];
+      : connectedColor;
     const group = svgElement("g", {
       class: `node${selectedNodeId === node.id ? " is-selected" : ""}`,
       tabindex: "0",
