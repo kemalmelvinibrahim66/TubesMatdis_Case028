@@ -51,7 +51,7 @@ let graphData;
 let currentMode = "day";
 let replayIndex = 0;
 let selectedNodeId = null;
-let showAllWeights = true;
+let showAllWeights = false;
 const componentColors = ["#1873c4", "#d97706", "#8b2bd1"];
 
 function svgElement(name, attributes) {
@@ -78,22 +78,76 @@ function addLine(layer, from, to, className) {
   return { start, end };
 }
 
-function addEdgeLabel(edge, start, end, className) {
-  const x = (start.x + end.x) / 2;
-  const y = (start.y + end.y) / 2 - 8;
+function findLabelPosition(start, end, width, placedLabels, nodePoints) {
+  const dx = end.x - start.x;
+  const dy = end.y - start.y;
+  const length = Math.hypot(dx, dy) || 1;
+  const normal = { x: -dy / length, y: dx / length };
+  const offsets = [18, 28, 40, 54, 70, 88, 108, 132];
+  const fractions = [0.5, 0.34, 0.66, 0.2, 0.8];
+  let best;
+  let bestScore = Infinity;
+
+  for (const fraction of fractions) {
+    for (const offset of offsets) {
+      for (const side of [1, -1]) {
+        const x = start.x + dx * fraction + normal.x * offset * side;
+        const y = start.y + dy * fraction + normal.y * offset * side;
+        const rect = {
+          left: x - width / 2,
+          right: x + width / 2,
+          top: y - 9,
+          bottom: y + 9
+        };
+        let score = offset + Math.abs(fraction - 0.5) * 20;
+
+        if (rect.left < 8 || rect.right > 892 || rect.top < 8 || rect.bottom > 652) {
+          score += 100000;
+        }
+
+        for (const placed of placedLabels) {
+          const overlapX = Math.max(0, Math.min(rect.right + 4, placed.right) - Math.max(rect.left - 4, placed.left));
+          const overlapY = Math.max(0, Math.min(rect.bottom + 3, placed.bottom) - Math.max(rect.top - 3, placed.top));
+          if (overlapX > 0 && overlapY > 0) score += 10000 + overlapX * overlapY;
+        }
+
+        for (const point of nodePoints) {
+          const nearestX = Math.max(rect.left, Math.min(point.x, rect.right));
+          const nearestY = Math.max(rect.top, Math.min(point.y, rect.bottom));
+          if (Math.hypot(point.x - nearestX, point.y - nearestY) < 16) score += 5000;
+        }
+
+        if (score < bestScore) {
+          best = { x, y, rect };
+          bestScore = score;
+        }
+        if (score < 200) return best;
+      }
+    }
+  }
+
+  return best;
+}
+
+function addEdgeLabel(edge, start, end, className, placedLabels, nodePoints) {
   const label = String(Math.round(edge.weight));
-  const width = label.length * 7 + 12;
+  const text = `${label}m`;
+  const width = text.length * 7 + 12;
+  const position = findLabelPosition(start, end, width, placedLabels, nodePoints);
+  if (!position) return;
+
   const group = svgElement("g", { class: `edge-label ${className}` });
   group.append(svgElement("rect", {
-    x: x - width / 2,
-    y: y - 8,
+    x: position.x - width / 2,
+    y: position.y - 9,
     width,
-    height: 16
+    height: 18
   }));
-  const text = svgElement("text", { x, y });
-  text.textContent = `${label}m`;
-  group.append(text);
+  const textElement = svgElement("text", { x: position.x, y: position.y });
+  textElement.textContent = text;
+  group.append(textElement);
   elements.labels.append(group);
+  placedLabels.push(position.rect);
 }
 
 function activeMstEdges() {
@@ -117,6 +171,9 @@ function drawGraph() {
   elements.edges.replaceChildren();
   elements.labels.replaceChildren();
   elements.nodes.replaceChildren();
+  const nodePoints = graphData.nodes.map(pointFor);
+  const placedLabels = [];
+  const pendingLabels = [];
 
   graphData.edges.forEach((edge) => {
     const key = EDGE_KEY(edge.from, edge.to);
@@ -150,8 +207,14 @@ function drawGraph() {
     const showLabel = showAllWeights || isMst || isClosedGate || isActiveGate || isRepair;
     if (showLabel) {
       const labelClass = isRepair ? "is-repair" : (isClosedGate || isActiveGate ? "is-gate" : (isMst ? "is-mst" : ""));
-      addEdgeLabel(edge, start, end, labelClass);
+      const priority = isRepair || isClosedGate || isActiveGate ? 0 : (isMst ? 1 : 2);
+      pendingLabels.push({ edge, start, end, labelClass, priority });
     }
+  });
+
+  pendingLabels.sort((a, b) => a.priority - b.priority);
+  pendingLabels.forEach(({ edge, start, end, labelClass }) => {
+    addEdgeLabel(edge, start, end, labelClass, placedLabels, nodePoints);
   });
 
   graphData.nodes.forEach((node) => {
@@ -392,6 +455,7 @@ async function initialize() {
       setReplayStep(replayIndex + 1);
     });
     document.getElementById("impact-view").addEventListener("click", setImpactView);
+    document.getElementById("show-all-weights").checked = showAllWeights;
     document.getElementById("show-all-weights").addEventListener("change", (event) => {
       showAllWeights = event.target.checked;
       drawGraph();
